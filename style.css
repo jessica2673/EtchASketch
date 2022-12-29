@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    flex-wrap: wrap;
+}
+
+#newSize {
+    align-self: center;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.box {
+    padding: 10px;
+}
+
