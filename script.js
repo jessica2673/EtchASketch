@@ -2,6 +2,8 @@ const container = document.querySelector("#container");
 const form = document.querySelector("#form");
 let input = document.querySelector("#input");
 const clearBtn = document.querySelector("#clear");
+const colorPicker = document.querySelector("#colorpicker");
+let currColor = '#000000'; //stored in hex form
 let gradient = 0;
 let currsize = 16;
 resize(currsize);
@@ -31,11 +33,18 @@ function resetListener() {
     boxes.forEach((box) => {
         box.addEventListener("mouseenter", () => {
             box.gradient += 0.1;
-            box.style.backgroundColor = `rgba(0,0,0,${box.gradient})`;
+            box.style.backgroundColor = hexToRGBA(currColor, box.gradient);
         });
     });
 }
 
+function hexToRGBA(hex, gradient) {
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+
+    return "rgba(" + r + ", " + g + ", " + b + ", " + gradient + ")";
+}
 
 form.addEventListener("submit", e => {
     e.preventDefault();
@@ -54,3 +63,10 @@ clearBtn.addEventListener("click", () => {
     clear(container);
     resize(currsize);
 })
+
+colorPicker.addEventListener("change", (e) => {
+    currColor = e.target.value;
+    resetListener();
+})
+
+

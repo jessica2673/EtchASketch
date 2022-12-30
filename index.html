@@ -11,6 +11,11 @@
     <h1>Etch A Sketch</h1>
     <div id="outerContainer">
         <div id="rightSide">
+            <div class="color">
+                <label for="colorpicker" id="colorLabel">Color Picker:</label>
+                <input type="color" id="colorpicker" value="#000000">
+            </div>
+
             <form action="script.js" method="GET" id="form" autocomplete="off">
                 <input type="text" id="input" name="input" form="form" placeholder="30">
                 <input type="submit" form="form" id="submitBtn" value="Change Size">

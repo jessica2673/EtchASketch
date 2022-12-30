@@ -1,3 +1,7 @@
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -12,8 +16,35 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    gap: 2em;   
 }
+
+/*styling the color chooser */
+.color {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#colorLabel {
+    font-size: 1.4em;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 3em;
+	height: 3em;
+    background-color: white;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: black solid 1px;
+    border-radius: 50%;
+}
+
 
 #input {
     font-size: 1.4em;
