@@ -5,6 +5,19 @@ body {
 
 h1 {
     text-align: center;
+    font-size: 3em;
+}
+
+#outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+#input {
+    font-size: 1.4em;
+    max-width: 4em;
 }
 
 #container {
@@ -16,10 +29,10 @@ h1 {
     width: 450px;
 }
 
-#newSize, #clear {
+#clear, #submitBtn {
     align-self: center;
-    font-size: 20px;
-    margin: 5px;
+    font-size: 1.4em;
+    margin: 20px 5px 0px 0px;
 }
 
 .box {

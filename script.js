@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
-const input = document.querySelector("#newSize");
+const form = document.querySelector("#form");
+let input = document.querySelector("#input");
 const clearBtn = document.querySelector("#clear");
 let gradient = 0;
 let currsize = 16;
@@ -25,12 +26,6 @@ function clear(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
-
-// function calcSize(boxes) {
-//     console.log(document.querySelectorAll('.box'));
-//     document.querySelectorAll('.box').style.padding = `${450/boxes}px`;
-// }
-
 function resetListener() {
     const boxes = document.querySelectorAll(".box");
     boxes.forEach((box) => {
@@ -42,14 +37,16 @@ function resetListener() {
 }
 
 
-input.addEventListener("click", ()=> {
-   let size = parseInt(prompt("Enter the size you want the grid to be in terms of boxes. Do not enter a number larger than 100: "));
+form.addEventListener("submit", e => {
+    e.preventDefault();
+   let size = document.querySelector('input[name=input]').value;
     if(size > 100) {
         document.querySelector("#info").textContent = "Sorry, that is too large.";
     } else {
         currsize = size;
         clear(container);
         resize(size);
+        input.value = "";
     }
 });
 
@@ -57,14 +54,3 @@ clearBtn.addEventListener("click", () => {
     clear(container);
     resize(currsize);
 })
-
-
-input.addEventListener("click", ()=> {
-   let size = parseInt(prompt("Enter the size you want the grid to be in terms of boxes. Do not enter a number larger than 100: "));
-    if(size > 100) {
-        document.querySelector("#info").textContent = "Sorry, that is too large.";
-    } else {
-        clear(container);
-        resize(size);
-    }
-});
