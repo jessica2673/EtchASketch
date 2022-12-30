@@ -58,3 +58,13 @@ clearBtn.addEventListener("click", () => {
     resize(currsize);
 })
 
+
+input.addEventListener("click", ()=> {
+   let size = parseInt(prompt("Enter the size you want the grid to be in terms of boxes. Do not enter a number larger than 100: "));
+    if(size > 100) {
+        document.querySelector("#info").textContent = "Sorry, that is too large.";
+    } else {
+        clear(container);
+        resize(size);
+    }
+});
