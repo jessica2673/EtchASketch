@@ -12,14 +12,15 @@
     <div id="outerContainer">
         <div id="rightSide">
             <div class="color">
-                <label for="colorpicker" id="colorLabel">Color Picker:</label>
+                <label for="colorpicker" id="colorLabel">Pick a Color:</label>
                 <input type="color" id="colorpicker" value="#000000">
             </div>
 
             <form action="script.js" method="GET" id="form" autocomplete="off">
                 <input type="text" id="input" name="input" form="form" placeholder="16">
-                <input type="submit" form="form" id="submitBtn" value="Change Size">
+                <input type="submit" form="form" id="submitBtn" value="Change Grid Size">
             </form>
+            <p>*Grid size is measured in number of squares. </br> Changing the grid size also clears the drawing!</p>
             <button id="clear">Clear</button>
             <div id="info"></div>
         </div>
