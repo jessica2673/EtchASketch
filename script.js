@@ -49,13 +49,17 @@ function hexToRGBA(hex, gradient) {
 form.addEventListener("submit", e => {
     e.preventDefault();
    let size = document.querySelector('input[name=input]').value;
-    if(size > 100) {
+   if(size === "") {
+    document.querySelector("#info").textContent = "Sorry, please enter a number.";
+   } else if(size <= 0) {
+        document.querySelector("#info").textContent = "Sorry, please enter a positive number.";
+    } else if(size > 100) {
         document.querySelector("#info").textContent = "Sorry, that is too large.";
     } else {
+        console.log(size);
         currsize = size;
         clear(container);
         resize(size);
-        input.value = "";
     }
 });
 
